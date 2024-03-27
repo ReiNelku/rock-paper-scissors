@@ -5,6 +5,18 @@
     <title>Rock Paper Scissors</title>
   </head>
   <body>
-    <script></script>
+    <script>
+      function getComputerChoice() {
+        const randomNumber = Math.floor(Math.random() * 9);
+
+        if (randomNumber < 3) {
+          return "Rock";
+        } else if (randomNumber >= 3 && randomNumber < 6 ) {
+          return "Paper";
+        } else {
+          return "Scissors";
+        }
+      }
+    </script>
   </body>
 </html>

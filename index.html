@@ -11,7 +11,7 @@
 
         if (randomNumber < 3) {
           return "Rock";
-        } else if (randomNumber >= 3 && randomNumber < 6 ) {
+        } else if (randomNumber >= 3 && randomNumber < 6) {
           return "Paper";
         } else {
           return "Scissors";
@@ -20,9 +20,9 @@
 
       function capitalize(text) {
         const firstLetterUpperCase = text.charAt(0).toUpperCase();
-        const restOfText = slice.slice(1);
+        const restOfText = text.slice(1);
 
-        return firstLetterUpperCase + restOfText
+        return firstLetterUpperCase + restOfText;
       }
     </script>
   </body>

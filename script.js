@@ -55,6 +55,28 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
+const rock = document.querySelector("#rock");
+const paper = document.querySelector("#paper");
+const scissors = document.querySelector("#scissors");
+
+rock.addEventListener("click", () => {
+  const computerSelection = getComputerChoice();
+
+  console.log(playRound("rock", computerSelection));
+});
+
+paper.addEventListener("click", () => {
+  const computerSelection = getComputerChoice();
+
+  console.log(playRound("paper", computerSelection));
+});
+
+scissors.addEventListener("click", () => {
+  const computerSelection = getComputerChoice();
+
+  console.log(playRound("scissors", computerSelection));
+});
+
 function playGame() {
   let playerScore = 0;
   let computerScore = 0;

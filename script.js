@@ -10,47 +10,20 @@ function getComputerChoice() {
   }
 }
 
-function capitalize(text) {
-  const firstLetterUpperCase = text.charAt(0).toUpperCase();
-  const restOfText = text.slice(1);
-
-  return firstLetterUpperCase + restOfText;
-}
-
 function playRound(playerSelection, computerSelection) {
-  const formatedPlayerSelection = capitalize(playerSelection).trim();
-
-  if (formatedPlayerSelection === computerSelection) {
+  if (playerSelection === computerSelection) {
     return "It's a tie!";
-  } else if (
-    formatedPlayerSelection === "Rock" &&
-    computerSelection === "Scissors"
-  ) {
+  } else if (playerSelection === "Rock" && computerSelection === "Scissors") {
     return "You Win! Rock beats Scissors";
-  } else if (
-    formatedPlayerSelection === "Paper" &&
-    computerSelection === "Rock"
-  ) {
+  } else if (playerSelection === "Paper" && computerSelection === "Rock") {
     return "You Win! Paper beats Rock";
-  } else if (
-    formatedPlayerSelection === "Scissors" &&
-    computerSelection === "Paper"
-  ) {
+  } else if (playerSelection === "Scissors" && computerSelection === "Paper") {
     return "You Win! Scissors beats Paper";
-  } else if (
-    formatedPlayerSelection === "Rock" &&
-    computerSelection === "Paper"
-  ) {
+  } else if (playerSelection === "Rock" && computerSelection === "Paper") {
     return "You Lose! Paper beats Rock";
-  } else if (
-    formatedPlayerSelection === "Paper" &&
-    computerSelection === "Scissors"
-  ) {
+  } else if (playerSelection === "Paper" && computerSelection === "Scissors") {
     return "You Lose! Scissors beats Paper";
-  } else if (
-    formatedPlayerSelection === "Scissors" &&
-    computerSelection === "Rock"
-  ) {
+  } else if (playerSelection === "Scissors" && computerSelection === "Rock") {
     return "You Lose! Rock beats Scissors";
   }
 }
@@ -76,7 +49,7 @@ rock.addEventListener("click", () => {
   const computerSelection = getComputerChoice();
 
   const result = document.createElement("p");
-  result.textContent = playRound("rock", computerSelection);
+  result.textContent = playRound("Rock", computerSelection);
   if (result.textContent.slice(4, 8) === "Win!") {
     playGame("player");
   } else if (result.textContent.slice(4, 8) === "Lose") {
@@ -89,7 +62,7 @@ paper.addEventListener("click", () => {
   const computerSelection = getComputerChoice();
 
   const result = document.createElement("p");
-  result.textContent = playRound("paper", computerSelection);
+  result.textContent = playRound("Paper", computerSelection);
   if (result.textContent.slice(4, 8) === "Win!") {
     playGame("player");
   } else if (result.textContent.slice(4, 8) === "Lose") {
@@ -102,7 +75,7 @@ scissors.addEventListener("click", () => {
   const computerSelection = getComputerChoice();
 
   const result = document.createElement("p");
-  result.textContent = playRound("scissors", computerSelection);
+  result.textContent = playRound("Scissors", computerSelection);
   if (result.textContent.slice(4, 8) === "Win!") {
     playGame("player");
   } else if (result.textContent.slice(4, 8) === "Lose") {

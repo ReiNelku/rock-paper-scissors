@@ -60,6 +60,12 @@ let computerScore = 0;
 
 const winner = document.querySelector("#winner");
 
+const playerScoreElement = document.querySelector("#player");
+playerScoreElement.textContent += ` ${playerScore}`;
+
+const computerScoreElement = document.querySelector("#cpu");
+computerScoreElement.textContent += ` ${computerScore}`;
+
 const rock = document.querySelector("#rock");
 const paper = document.querySelector("#paper");
 const scissors = document.querySelector("#scissors");
@@ -109,9 +115,11 @@ function playGame(roundWinner) {
   switch (roundWinner) {
     case "player":
       playerScore++;
+      playerScoreElement.textContent = `Player's Score: ${playerScore}`;
       break;
     case "computer":
       computerScore++;
+      computerScoreElement.textContent = `Computer's Score: ${computerScore}`;
       break;
   }
 

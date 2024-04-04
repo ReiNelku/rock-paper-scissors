@@ -59,19 +59,6 @@ function playGame() {
   let playerScore = 0;
   let computerScore = 0;
 
-  for (let i = 0; i < 5; i++) {
-    const playerSelection = prompt("Type your choice: ");
-    const computerSelection = getComputerChoice();
-
-    const round = playRound(playerSelection, computerSelection);
-    console.log(round);
-    if (round.slice(4, 8) === "Win!") {
-      playerScore += 1;
-    } else if (round.slice(4, 8) === "Lose") {
-      computerScore += 1;
-    }
-  }
-
   if (playerScore > computerScore) {
     console.log("You are the Winner!!!");
   } else if (computerScore > playerScore) {

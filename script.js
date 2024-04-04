@@ -55,6 +55,11 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
+let playerScore = 0;
+let computerScore = 0;
+
+const winner = document.querySelector("#winner");
+
 const rock = document.querySelector("#rock");
 const paper = document.querySelector("#paper");
 const scissors = document.querySelector("#scissors");
@@ -66,6 +71,11 @@ rock.addEventListener("click", () => {
 
   const result = document.createElement("p");
   result.textContent = playRound("rock", computerSelection);
+  if (result.textContent.slice(4, 8) === "Win!") {
+    playGame("player");
+  } else if (result.textContent.slice(4, 8) === "Lose") {
+    playGame("computer");
+  }
   results.appendChild(result);
 });
 
@@ -74,6 +84,11 @@ paper.addEventListener("click", () => {
 
   const result = document.createElement("p");
   result.textContent = playRound("paper", computerSelection);
+  if (result.textContent.slice(4, 8) === "Win!") {
+    playGame("player");
+  } else if (result.textContent.slice(4, 8) === "Lose") {
+    playGame("computer");
+  }
   results.appendChild(result);
 });
 
@@ -82,20 +97,27 @@ scissors.addEventListener("click", () => {
 
   const result = document.createElement("p");
   result.textContent = playRound("scissors", computerSelection);
+  if (result.textContent.slice(4, 8) === "Win!") {
+    playGame("player");
+  } else if (result.textContent.slice(4, 8) === "Lose") {
+    playGame("computer");
+  }
   results.appendChild(result);
 });
 
-function playGame() {
-  let playerScore = 0;
-  let computerScore = 0;
+function playGame(roundWinner) {
+  switch (roundWinner) {
+    case "player":
+      playerScore++;
+      break;
+    case "computer":
+      computerScore++;
+      break;
+  }
 
-  if (playerScore > computerScore) {
-    console.log("You are the Winner!!!");
-  } else if (computerScore > playerScore) {
-    console.log("You have Lost!");
-  } else {
-    console.log("Game ends with a Tie.");
+  if (playerScore === 5) {
+    winner.textContent = "You have Won!!!";
+  } else if (computerScore === 5) {
+    winner.textContent = "Computer has Won!!!";
   }
 }
-
-playGame();
